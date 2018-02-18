@@ -1,0 +1,182 @@
+%
+% Module 3 Chapter 5 Homework
+% CSC160-C00: Computer Science I (C++)
+% Author: Ashton Hellwig
+%
+
+
+\documentclass[a4paper]{article}
+
+
+    % Packages
+    \usepackage[english]{babel}       % Internationalization
+    \usepackage{soul}                 % Highlighting
+    \usepackage{hyperref}             % Links (internal and external)
+    \usepackage{fancyhdr}             % Headers and footers
+    \usepackage[dvipsnames]{xcolor}   % Text Colors
+    \usepackage{listings}             % Code Snippets
+    \usepackage{algorithmicx}         % Algorithmic notation support
+    \usepackage{algpseudocode}        % Algorithmic notation environments
+    \usepackage{enumitem}             % Ordered lists
+    \usepackage{geometry}             % Page layout
+    \usepackage{graphicx}             % Image support
+    \usepackage[toc, page]{appendix}  % Appendix
+
+
+    % Colors
+    \newcommand{\commentstylecolor}{\color{Gray}}
+    \newcommand{\keywordstylecolor}{\color{MidnightBlue}}
+    \newcommand{\stringstylecolor}{\color{ForestGreen}}
+    \newcommand{\questioninput}{\color{Red}}
+    \newcommand{\answertcolor}{\color{Green}}
+    \newcommand{\myanswer}{\answertcolor{\hl}}
+
+
+    % Image Directory
+    \graphicspath{ {screenshots/} }
+
+
+    % Hyperlink Setup
+    \hypersetup{
+      colorlinks = true,
+      urlcolor = blue,
+      linkcolor = blue
+    }
+
+
+    % Syntax-Highlighting for Code Snippets
+    \lstset{
+      backgroundcolor=\color{white},
+      breaklines=true,%
+      captionpos=b,%
+      frame=tb,%
+      tabsize=4,%
+      numbers=left,%
+      showstringspaces=false,%
+      commentstyle=\commentstylecolor,%
+      keywordstyle=\keywordstylecolor,%
+      stringstyle=\stringstylecolor%
+    }
+
+
+    % Page Configuration
+    %% Style
+    \pagestyle{fancy}
+
+    %% Layout
+    \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+    }
+    \setlength{\headheight}{12pt}
+    \setlength{\floatsep}{12pt}
+
+    %% Title page
+    \title{Module 3 Chapter 5 Homework}
+    \author{Ashton Hellwig}
+    \date\today
+    \setcounter{tocdepth}{3}
+
+    %% Subsequent pages
+    \lhead{CSC160}
+    \rhead{Computer Science I (C++)}
+    \lfoot{M2C4HW}
+    \rfoot{A. Hellwig}
+
+
+    % Document Content
+  \begin{document}
+    \maketitle
+    \tableofcontents
+    \listoffigures
+    \newpage
+
+
+    % Question 1
+    \section{QUESTION 1}
+      Suppose that the input is \texttt{3 4 6 7 2 -1}. What is the outputof the
+        following code?
+      \begin{lstlisting}[language=c++]
+int num;
+int sum;
+
+cin >> num;
+sum = num;
+
+while (num != -1)
+{
+    sum = sum + 2 * num;
+    cin >> num;
+}
+
+cout << "Sum = " << sum << endl;
+      \end{lstlisting}
+      % Question 1 Solution
+      \subsection{Solution}
+        TODO: SOLUTION
+        \begin{verbatim}
+
+        \end{verbatim}
+        \begin{figure}[h]
+          \caption{Question 1 Solution}
+          \centering
+          %\includegraphics[width=\textwidth]{Q1F1}
+          \label{fig:q1}
+        \end{figure}
+
+
+    % Appendices
+    \newpage
+    \appendix
+
+    \section{General Functions}
+      Since I need my source files to work on both my machine running Windows and
+        Arch Linux, I need cross-platform functions to use. I can never seem to
+        get \texttt{system(``pause'')} to work on any OS other than Windows. To
+        ratify this, I created the following function (under its own class
+        and with its own header file) to do relativly the same thing. It is below.
+        \begin{figure}[h]
+          \caption{GenFuncs.cpp}
+          \begin{lstlisting}[language=c++]
+#include "GenFuncs.h"
+#include <iostream>
+
+int GenFuncs::pauseprompt()
+{
+    std::cout << "Press enter to continue..." << std::endl;
+    std::cin.ignore();
+    return 0;
+}
+          \end{lstlisting}
+        \end{figure}
+        \begin{figure}[h]
+          \caption{GenFuncs.h}
+          \begin{lstlisting}[language=c++]
+#ifndef GEN_FUNCS_H_INCLUDED
+
+class GenFuncs
+{
+public:
+    static int pauseprompt();
+};
+
+#endif GEN_FUNCS_H_INCLUDED
+          \end{lstlisting}
+        \end{figure}
+        \begin{figure}[h]
+          \caption{GenFuncs::pauseprompt();}
+          \centering
+          %\includegraphics[width=\textwidth]{}
+        \end{figure}
+
+
+    % Question 3 Appendix
+    \newpage
+    \section{Question TODO: Appendix}
+
+
+
+  \end{document}
